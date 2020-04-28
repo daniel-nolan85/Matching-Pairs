@@ -1,0 +1,172 @@
+.go-back {
+    position: fixed;
+    top: 2rem;
+    left: 3rem;
+    color: #000;
+    font-size: 3rem;
+}
+.container {
+    position: relative;
+    top: 5rem;
+    margin: auto;
+    width: 30vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+p {
+    text-align: center;
+    font-family: 'Comic Neue', cursive;
+    font-size: 3rem;
+}
+.button {
+    border-radius: 10px;
+    background: crimson;
+    text-decoration: none;
+    outline: none;
+    font-size: 2rem;
+    margin: 1rem;
+    padding: 5px 10px 5px;
+}
+a {
+    color: #fff;
+    text-decoration: none;
+}
+a:visited {
+    color: #fff;
+    text-decoration: none;
+}
+.animal {
+    background: url(images/animals.jpg);
+}
+.pirate {
+    background: url(images/pirates.jpg);
+}
+.vehicle {
+    background: url(images/vehicles.jpg);
+}
+.stopwatch, .best-time {
+    font-size: 3em;
+    font-family: monospace;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.endgame {
+    animation: win 1s linear forwards;
+}
+.message {
+    font-size: 4rem;
+    font-family: monospace;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #00cf0a;
+}
+.board {
+    border: 1px solid black;
+    position: relative;
+    width: 685px;
+    height: 460px;
+    margin: auto;
+}
+table {
+    border-collapse: separate;
+    border-spacing: 10px 10px;
+}
+.flip {
+    width: 100px;
+    height: 100px;
+    perspective: 1000px;
+}
+.inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    transition: transform 0.8s;
+    transform-style: preserve-3d;
+}
+.flip.reveal .inner {
+    transform: rotateY(180deg);
+}
+.front, .back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+}
+.back {
+    transform: rotateY(180deg);
+}
+.disable-click {
+    pointer-events: none;
+}
+#replay {
+    width: 10%;
+    margin-top: .5rem;
+    margin-left: 45%;
+    margin-right: 45%;
+    font-size: 1rem;
+}
+@keyframes win {
+    0% {font-size: 4rem;}
+    100% {font-size: 5rem; color: #00cf0a;}
+}
+@media only screen and (max-width: 600px) {
+    .go-back {
+        top: 2.5rem;
+        left: 2rem;
+        font-size: 1.5rem;
+    }
+    .stopwatch {
+        font-size: 1.5em;
+        margin-top: 3rem;
+    }
+    .message {
+        font-size: 2em;
+    }
+    .best-time {
+        font-size: 1.5em;
+    }
+    .board {
+        width: 345px;
+        height: 235px;
+        margin: auto;
+    }
+    table {
+        border-collapse: separate;
+        border-spacing: 5px 5px;
+    }
+    .flip {
+        width: 50px;
+        height: 50px;
+        perspective: 1000px;
+    }
+    img {
+        width: 50px;
+        height: 50px;
+    }
+    #replay {
+        width: 20%;
+        margin-top: .25rem;
+        margin-left: 40%;
+        margin-right: 40%;
+        font-size: .5rem;
+    }
+    @keyframes win {
+        0% {font-size: 2rem;}
+        100% {font-size: 2.5rem; color: #00cf0a;}
+    }
+}
+@media only screen and (min-width: 601px) and (max-width: 1200px) {
+    .stopwatch {
+        margin-top: 3rem;
+    }
+    .go-back {
+        top: 2.5rem;
+        left: 2rem;
+    }
+}
